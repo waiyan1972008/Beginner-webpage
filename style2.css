@@ -1,0 +1,730 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #0c0d14;
+        color: #fff;
+    }
+
+    nav {
+        background: #00071f;
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #000b2c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+    }
+
+    nav img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+
+    }
+
+    .layout {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: url(laser-show-glowing-lines-neon-lights-with-black-background.jpg);
+        background-size: contain;
+    }
+
+    aside {
+        width: 70px;
+        background: #00071f;
+        height: calc(100vh - 70px);
+        border: 1px solid #000b2c;
+        transition: width 0.35s ease, left 0.35s ease;
+        font-size: 20px;
+        overflow: hidden;
+        position: sticky;
+        top: 70px;
+    }
+
+    main {
+        flex: 1;
+        padding: 25px;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+
+    }
+
+    #toggle {
+        display: none;
+    }
+
+    .toggle-btn {
+        width: 28px;
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: relative;
+        left: 25px;
+    }
+
+    .toggle-btn span {
+        height: 3px;
+        width: 100%;
+        background: #eff0f7;
+        border-radius: 3px;
+        transition: 0.4s;
+    }
+
+    /* Animate ☰ → ✖ */
+    #toggle:checked+nav .toggle-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: red;
+    }
+
+    #toggle:checked+nav .toggle-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #toggle:checked+nav .toggle-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+        background-color: red;
+
+    }
+
+    #toggle:checked~.layout aside {
+        width: 220px;
+        overflow: auto;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 10px;
+    }
+
+    .menu li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: scale 0.3s ease, background ease 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .menu li a {
+        text-decoration: none;
+    }
+
+    /* Hover/pulse effect */
+    .menu li:hover {
+        scale: 1.05;
+        background: #28293d;
+
+    }
+
+    /* Text fade + slide */
+    .text,
+    .about,
+    .contact-btn,
+    .idk {
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: 0.3s;
+    }
+
+    #toggle:checked~.layout aside .about {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #toggle:checked~.layout aside .contact-btn {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #toggle:checked~.layout aside .idk {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #toggle:checked~.layout aside .text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    .search {
+        margin: 20px;
+    }
+
+    .search input {
+        background-color: #373952;
+        padding: 6px 10px;
+        width: 460px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .search input ::placeholder {
+        color: #aaadbe;
+    }
+
+    .container-search {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        position: relative;
+        left: -100px;
+        perspective: 1000px;
+    }
+
+    .container-search i {
+        color: #fff;
+        position: relative;
+        left: -30px;
+        z-index: 1;
+
+    }
+
+    nav button {
+        background: #191970;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s ease;
+    }
+
+    nav button a {
+        text-decoration: none;
+        color: #eff0f7;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    nav button:hover {
+        background: #002069;
+    }
+
+    nav .icon1,
+    nav .icon2 {
+        font-size: 25px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-color: #00071f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .noti,
+    .fav {
+        display: none;
+        width: 300px;
+        height: 400px;
+        background: #0c0d14;
+        border: 1px solid #00103d;
+        border-radius: 20px;
+        position: absolute;
+        top: 40px;
+        text-align: center;
+        animation: run 1s ease infinite alternate;
+
+    }
+
+    @keyframes run {
+        0% {
+            box-shadow: 0 0 10px #00071f, 0 0 15px #00103d;
+        }
+
+        50% {
+            box-shadow: 0 0 15px #00103d, 0 0 20px #003289;
+        }
+
+        100% {
+            box-shadow: 0 0 20px #003289;
+        }
+    }
+
+    .noti ul li,
+    .fav ul li {
+        list-style: none
+    }
+
+    .noti ul li a,
+    .fav ul li a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        gap: 15px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: scale 0s ease, background ease 0s;
+
+    }
+
+    .noti ul li:hover a,
+    .fav ul li:hover a {
+        scale: 1.05;
+        background: #28293d;
+
+    }
+
+    .icon1:hover .noti,
+    .icon2:hover .fav {
+        display: block;
+    }
+
+    nav .icon1,
+    nav .icon2 {
+        left: 0px;
+
+    }
+
+
+    nav h2 {
+        position: relative;
+        right: 40px;
+    }
+
+    .ads-section {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        margin-top: 10px;
+    }
+
+    .slideshow-container {
+        width: 60%;
+        position: relative;
+        left: 0;
+        border-radius: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+        border: 1px solid #00103d;
+        box-shadow: 0 0 10px #003289;
+        transition: scale 0.5s ease;
+
+    }
+
+    .slideshow-container img:hover {
+        scale: 1.05;
+    }
+
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: none;
+        transition: background-color 0.6s ease;
+    }
+
+    .presenter {
+        width: 40%;
+    }
+
+    .presenter img {
+        width: 90%;
+        height: 300px;
+        border-radius: 20px;
+        border: 1px solid #00103d;
+        box-shadow: 0 0 10px #003289;
+        position: relative;
+        left: 30px;
+        transition: transform 1s ease;
+        cursor: pointer;
+    }
+
+    .presenter img:hover {
+        transform: scale(1.04);
+        transition: 0.3s;
+    }
+    .slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100vh;
+}
+
+/* Slider */
+.slider {
+    width: 80%;
+    overflow: hidden;
+    height: 500px;
+}
+
+/* Slides wrapper */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Each slide */
+.slide {
+    min-width: 100%;   /* ✅ IMPORTANT FIX */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 500px;
+}
+
+/* Cards */
+
+/* Buttons */
+.btn {
+    padding: 15px 20px;
+    font-size: 20px;
+    background: navy;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+    .main button {
+        width: 200px;
+        height: 30px;
+        background-color: white;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #0c0d14;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #28293d;
+    }
+
+    .about {
+        margin-left: 30px;
+        margin-top: 20px;
+
+    }
+
+    .about li {
+        list-style: none;
+    }
+
+    .about li a {
+        color: #f4f3ff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        transition: color 0.5s ease;
+    }
+
+    .about li a:hover {
+        color: #31323d;
+    }
+
+    .contact-btn {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .contact-btn button {
+        padding: 10px;
+        background: #191970;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 20px;
+
+    }
+
+    .contact-btn button a {
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+        color: #eff0f7;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .idk p {
+        font-size: 14px;
+        color: #5a5766;
+    }
+
+    @media(max-width:800px) {
+        .toggle-btn {
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        nav img {
+            position: relative;
+            left: 45px;
+            width: 50px;
+            height: 50px;
+        }
+
+        nav h2 {
+            position: relative;
+            left: 50px;
+            font-size: 12px;
+        }
+
+        .search input {
+            width: 200px;
+            position: relative;
+            left: 130px;
+            top: 10px;
+        }
+
+        .container-search i {
+            position: relative;
+            bottom: 20px;
+            left: 290px;
+        }
+
+        .icon1,
+        .icon2 {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 15px;
+            left: -220px;
+        }
+
+        .icon1 i,
+        .icon2 i {
+            font-size: 25px;
+            position: relative;
+            left: 20px;
+        }
+
+        nav button {
+            position: relative;
+            right: 70px;
+            width: 80px;
+            height: 40px;
+            bottom: 25px;
+        }
+
+        aside {
+            width: 60px;
+        }
+
+        .icon {
+            font-size: 18px;
+            position: relative;
+            right: 10px;
+        }
+
+        #toggle:checked~.layout aside {
+            width: 150px;
+        }
+
+        .text {
+            font-size: 12px;
+            position: absolute;
+            right: 3px;
+        }
+
+        .about {
+            font-size: 10px;
+            position: relative;
+            right: 20px;
+        }
+
+        .contact-btn button {
+            padding: 8px;
+        }
+
+        .contact-btn button a {
+            font-size: 14px;
+        }
+
+        .idk {
+            font-size: 2px;
+        }
+
+        .swiper-wrapper {
+            max-width: 400px;
+            height: 180px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .swiper-wrapper img {
+            width: 200px;
+            height: 145px;
+            position: relative;
+            top: 1px;
+            border-radius: 20px;
+        }
+
+        .items {
+            min-width: 200px;
+            height: 150px;
+        }
+    }
+
+
+    .up {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .up button {
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid #00103d;
+        background-color: #002069;
+        box-shadow: 0 0 15px #003289;
+        cursor: pointer;
+    }
+
+    .up button a {
+        color: #fff;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .up button:hover {
+        background-color: #191970;
+    }
+
+    #linkedin:hover {
+        color: #003289;
+    }
+
+    #discord:hover {
+        background-color: #003289;
+        color: #ffffff;
+    }
+
+    #facebook:hover {
+        color: blue;
+    }
+
+
+
+    .top a {
+        text-decoration: none;
+        background-color: #002069;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+     .top a:hover {
+        transform: scale(1.05);
+        background-color: #191970;
+    }
+    
