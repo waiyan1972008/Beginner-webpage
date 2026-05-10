@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contain-box {
+
+    width: 360px;
+    margin: 100px;
+    height: 100%;
+    color: solid gray;
+    background: linear-gradient(135deg, rgb(3, 92, 77), rgb(237, 236, 241));
+    border-radius: 10px;
+
+}

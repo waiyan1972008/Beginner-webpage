@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="icon" type="image/x-icon" href="image/Blue Minimalist Game Store Logo.png">
+
+  <style>
+    body {
+      font-family: 'Roboto' sans-serif;
+      background-color: #010823;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #191970;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #002069;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #000519;
+      padding: 10px;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+      background-color: #010823;
+      box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    #email,
+    #date {
+      width: 100%;
+      padding: 15px;
+    }
+
+    #logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 20px;
+    }
+
+    .heading {
+      display: flex;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .column,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="heading"> <img src="image/Blue Minimalist Game Store Logo.png" alt="" id="logo">
+    <h2>Cyber game Store</h2>
+  </div>
+
+  <div class="container">
+    <div style="text-align:center">
+      <h2>Contact Us</h2>
+      <p> Leave us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="fullsize/map.jpg" style="width:100%">
+      </div>
+      <div class="column">
+        <form   >
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name.." required>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="name" placeholder="Your last name.."required>
+          <label for="email">Enter your email</label>
+          <input type="email" id="email"  placeholder="example@email"required>
+          <br>
+          <label for="date">Date of Birth</label>
+          <input type="date" id="date">
+          <div class="gender">
+            <h3>Gender</h3>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="Gender" value="male">
+            <label for="female">female</label>
+            <input type="radio" id="female" name="Gender" value="female">
+            <label for="other">other</label>
+            <input type="radio" id="other" name="Gender" value="other">
+          </div><br>
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">Myanmar</option>
+            <option value="usa">Laos</option>
+            <option value="usa">Thailand</option>
+            <option value="usa">France</option>
+            <option value="usa">Norway</option>
+            <option value="usa">China</option>
+            <option value="usa">Russia</option>
+
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

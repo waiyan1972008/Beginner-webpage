@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .group {
+      position: relative;
+      overflow: hidden;
+      height: 30px;
+      background-color: black;
+      color: white;
+      border-bottom: 2px solid blue;
+      border-top: 2px solid blue;
+    }
+
+    .group .txt {
+      position: absolute;
+      margin: 5px 0;
+      top: 5px;
+      white-space: nowrap;
+      width: max-content;
+      animation: my-animation 40s linear infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="txtarea">
+    <div class="group">
+      <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, sunt expedita quibusdam
+        corporis
+        natus illo ipsum tempore soluta quis quidem eos repellat laudantium magni maxime. Dolor tempore rem eveniet.</p>
+    </div>
+  </div>
+  <script>
+    var style = document.createElement('style');
+    var position = 'right';
+    style.innerHTML = `@keyframes my-animation {
+        0%{${position}:-$document.querySelector('.txt').offsetWidth+10}px; }
+       100% { ${position}:100%;
+    }`;
+    document.head.append(style);
+    var style = document.createElement('style');
+    var position = 'right';
+    var textEl = document.querySelector('.txt');
+    var w = textEl.offsetWidth;
+    style.innerHTML = `@keyframes my-animation {
+      0% { ${position}: -${w + 10}px; }
+      100% { ${position}: 100%; }
+    }`;
+    document.head.append(style);
+
+  </script>
+</body>
+
+</html>                                                                                                                                                  

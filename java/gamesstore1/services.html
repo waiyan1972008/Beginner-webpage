@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contant</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, black, navy);
+            position: sticky;
+            display: grid;
+            grid-template-areas:
+                "nav nav nav"
+                "aside main main"
+                "footer footer footer";
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            margin: 0;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        nav {
+            width: 100%;
+            height: 200px;
+            padding: 1rem 5%;
+            background: linear-gradient(135deg, black, navy);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px #0aa9f3;
+
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            position: relative;
+            font-size: 2rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #e2e8f0;
+            text-shadow: 0 0 10px #38bdf8;
+            transition: 0.3s;
+        }
+
+        .nav-links li a :hover {
+            color: #0aa9f3;
+            text-shadow: 0 0 10px #0aa9f3;
+        }
+
+        .btns {
+            display: flex;
+        }
+
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 100;
+            font-size: 2rem;
+            background: #38bdf8;
+            box-shadow: 0 0 15px #38bdf8;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn a {
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s;
+
+        }
+
+        .btn :hover {
+            background: transparent;
+            box-shadow: 0 0 25px rgba(245, 222, 179, 0.078);
+        }
+
+        h1 {
+            color: white;
+            font-size: 70px;
+        }
+        main{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <figure>
+                <img src="image/Blue Minimalist Game Store Logo.png" alt="" width="150px" height="150px">
+                <figcaption style="font-size: 30px;">ICE Game Store</figcaption>
+            </figure>
+        </div>
+
+
+        <ul class="nav-links">
+            <li><a href="workspace.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+        <div class="btns">
+            <button class="btn"><a href="game login.html">login</a></button>
+        </div>
+
+    </nav>
+    <main>
+        <h1>Services center</h1>
+        <h1>In progress</h1>
+    </main>
+</body>
+
+</html>

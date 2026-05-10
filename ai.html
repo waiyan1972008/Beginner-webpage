@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Game Store</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#0c0d14;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    height:70px;
+    background:#00071f;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    position:sticky;
+    top:0;
+}
+
+nav h2{
+    color:#fff;
+}
+
+/* SEARCH */
+.search input{
+    padding:8px 15px;
+    border-radius:20px;
+    border:none;
+    outline:none;
+    width:250px;
+}
+
+/* GRID */
+main{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* CARD */
+.items{
+    background:#00071f;
+    border-radius:15px;
+    padding:10px;
+    transition:0.3s;
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+}
+
+.items:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px #003289;
+}
+
+.items img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* TEXT */
+.items h3{
+    margin:10px 0;
+}
+
+.items p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* BUTTON */
+.btn-group{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+button{
+    flex:1;
+    padding:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.get-btn{
+    background:#191970;
+    color:white;
+}
+
+.get-btn:hover{
+    background:#002069;
+}
+
+.fav-btn{
+    background:#222;
+    color:white;
+}
+
+.fav-btn:hover{
+    background:red;
+}
+
+/* LOADING */
+#loading{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-size:24px;
+}
+
+/* CART PANEL */
+.cart-box{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    background:#00071f;
+    padding:15px;
+    border-radius:10px;
+    width:200px;
+}
+
+.cart-box h4{
+    margin-bottom:10px;
+}
+
+.cart-box ul{
+    list-style:none;
+    max-height:150px;
+    overflow:auto;
+}
+
+.cart-box li{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .search input{
+        width:150px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">Loading...</div>
+
+<!-- MAIN -->
+<div id="main" style="display:none;">
+
+<nav>
+    <h2>Cyber Games</h2>
+    <div class="search">
+        <input type="text" id="searchBox" placeholder="Search game...">
+    </div>
+</nav>
+
+<main id="gameContainer">
+
+<!-- GAME -->
+<div class="items">
+    <h3>FIFA 22</h3>
+    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1506830/header.jpg">
+    <p>4.5⭐ Football Simulation</p>
+    <div class="btn-group">
+        <button class="get-btn" onclick="addToCart('FIFA 22')">Get</button>
+        <button class="fav-btn" onclick="addToFav('FIFA 22')">❤️</button>
+    </div>
+</div>
+
+<div class="items">
+    <h3>NBA 2K23</h3>
+    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1919590/header.jpg">
+    <p>4.6⭐ Basketball Simulation</p>
+    <div class="btn-group">
+        <button class="get-btn" onclick="addToCart('NBA 2K23')">Get</button>
+        <button class="fav-btn" onclick="addToFav('NBA 2K23')">❤️</button>
+    </div>
+</div>
+
+<div class="items">
+    <h3>WWE 2K23</h3>
+    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1942660/header.jpg">
+    <p>4.0⭐ Wrestling</p>
+    <div class="btn-group">
+        <button class="get-btn" onclick="addToCart('WWE 2K23')">Get</button>
+        <button class="fav-btn" onclick="addToFav('WWE 2K23')">❤️</button>
+    </div>
+</div>
+
+<div class="items">
+    <h3>eFootball 2024</h3>
+    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1665460/header.jpg">
+    <p>4.0⭐ Soccer</p>
+    <div class="btn-group">
+        <button class="get-btn" onclick="addToCart('eFootball 2024')">Get</button>
+        <button class="fav-btn" onclick="addToFav('eFootball 2024')">❤️</button>
+    </div>
+</div>
+
+</main>
+
+<!-- CART UI -->
+<div class="cart-box">
+    <h4>🛒 Cart</h4>
+    <ul id="cartList"></ul>
+</div>
+
+</div>
+
+<script>
+// LOADING
+const loading = document.getElementById("loading");
+const main = document.getElementById("main");
+
+setTimeout(()=>{
+    loading.style.display="none";
+    main.style.display="block";
+},1000);
+
+// SEARCH
+const searchBox = document.getElementById("searchBox");
+const items = document.querySelectorAll(".items");
+
+searchBox.addEventListener("keyup",()=>{
+    let value = searchBox.value.toLowerCase();
+
+    items.forEach(item=>{
+        let title = item.querySelector("h3").innerText.toLowerCase();
+
+        item.style.display = title.includes(value) ? "block" : "none";
+    });
+});
+
+// CART
+let cart = [];
+const cartList = document.getElementById("cartList");
+
+function addToCart(name){
+    cart.push(name);
+
+    let li = document.createElement("li");
+    li.textContent = name;
+    cartList.appendChild(li);
+}
+
+// FAVORITE
+let fav = [];
+
+function addToFav(name){
+    fav.push(name);
+    alert(name + " added to favorite ❤️");
+    console.log(fav);
+}
+</script>
+
+</body>
+</html>

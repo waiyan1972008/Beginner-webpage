@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ox game</title>
+    <link rel="stylesheet" href="ox.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>OX Game</h1>
+        <div class="game-info">
+            <div class="current-player" id="currentPlayer">player X's turn</div>
+        </div>
+
+        <div class="game-board" id="game-Board">
+
+            <button class="cell" data-index="0"></button>
+            <button class="cell" data-index="1"></button>
+            <button class="cell" data-index="2"></button>
+            <button class="cell" data-index="3"></button>
+            <button class="cell" data-index="4"></button>
+            <button class="cell" data-index="5"></button>
+            <button class="cell" data-index="6"></button>
+            <button class="cell" data-index="7"></button>
+            <button class="cell" data-index="8"></button>
+
+        </div>
+        <div class="game-ststus" id="game-Status"></div>
+        <div class="control"></div>
+        <button class="btn btn-primary" id="resetbtn">New Game</button>
+        <button class="btn btn-secondary" id="resetscorebtn">Reset score</button>
+        <div class="score-board">
+            <div class="scoreX">
+                <div class="score-label">Player x</div>
+                <div class="score-value" id="score X">0</div>
+            </div>
+            <div class="score Tie">
+                <div class="score-label">Ties</div>
+                <div class="score-value" id="score Ties">0</div>
+
+            </div>
+            <div class="score O">
+                <div class="score-label">Player O</div>
+                <div class="score-value" id="score O">0</div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="ox.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0c0d14;
+    display: grid;
+    grid-template-areas:
+        "nav nav "
+        "aside body"
+    ;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+
+}
+
+nav {
+    grid-area: nav;
+    background: #1a1b28;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border: 1px solid #28293d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+nav h2{
+    position: relative;
+    left: -50px;
+}
+
+#toggle {
+    display: none;
+}
+
+aside {
+    grid-area: aside;
+    background: #1a1b28;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #28293d;
+    display: none;
+}
+
+aside .sidebar {
+    margin-bottom: 20px;
+    background-color: #31323d;
+    display: flex;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+
+.sidebar .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.sidebar span a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.5s ease;
+
+}
+
+.sidebar span a:hover {
+    color: #8d8d8d;
+}
+
+.side-main {
+    flex: 1;
+    padding: 20px;
+}
+
+.toggle {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+    background-color: #1a1b28;
+    cursor: pointer;
+    border-radius: 2px;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    padding: 15px 15px;
+}
+
+.toggle .common {
+    position: absolute;
+    height: 5px;
+    width: 30px;
+    background-color: #6842ff;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top-line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .mid-line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .bottom-line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#toggle:checked~.toggle .top-line {
+    left: 10px;
+    height: 4px;
+    top: 25px;
+    width: 35px;
+    transform: rotate(45deg);
+}
+
+#toggle:checked~.toggle .bottom-line {
+    left: 10px;
+    height: 4px;
+    top: 25px;
+    width: 35px;
+    transform: rotate(-45deg);
+}
+
+#toggle:checked~.toggle .mid-line {
+    opacity: 0;
+    transform: translate(20px);
+}
+
+#toggle:checked~aside {
+    display: block;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+nav button {
+    background: #6842ff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+nav button:hover {
+    background: #5636cc;
+}
+
+.search {
+    margin: 20px;
+}
+
+.search input {
+    background-color: #373952;
+    padding: 6px 10px;
+    width: 460px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.search input ::placeholder {
+    color: #aaadbe;
+}
+
+.container-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    left: -100px;
+    perspective: 1000px;
+}
+
+.container-search i {
+    color: #fff;
+    position: relative;
+    left: -30px;
+    z-index: 1;
+
+}
+
+nav .icon1,
+nav .icon2 {
+    font-size: 25px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #31323d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+nav .icon1:hover,
+nav .icon2:hover {
+    background: #28293d;
+}
+
+nav .icon1 {
+    left: 0px;
+}
+
+nav .icon2 {
+    left: 0px;
+}
+
+@media(max-width:800px) {
+    body {
+        grid-template-columns: 150px;
+
+    }
+
+    aside {
+        width: 150px;
+        display: none;
+    }
+    nav img{
+        position: relative;
+        left: 30px;
+    }
+    nav h2{
+        position: relative;
+        font-size: 18px;
+        left: 20px;
+    }
+
+    nav .container-search .search input {
+        width: 200px;
+        margin-left: 70px;
+        margin-bottom: -10px;
+    }
+
+    nav .container-search .search i {
+        position: relative;
+        top: -20px;
+        left: 240px;
+    }
+    nav .icon1{
+        position: relative;
+        left: 100px;
+        top: 30px;
+    }
+        nav .icon2{
+        position: relative;
+        left: 100px;
+        top: 30px;
+    }
+    nav button{
+        position: relative;
+        top: -10px;
+    }
+    .toggle{
+        position: relative;
+        top: 2px;
+        left: -10px;
+        width: 35px;
+        height: 35px;
+    }
+
+}
+.recommand ,.feature ,.Popular{
+    width: 100%;
+    height: 350px;
+}
+aside .hide-sidebar{
+    grid-template-columns: 1fr;
+}

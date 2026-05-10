@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="my">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, black, navy);
+      font-family: sans-serif;
+      color: #0aa9f3;
+    }
+
+    .card {
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px #0aa9f3;
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 40px;
+    }
+
+    input {
+      width: 100%;
+      padding: 20px 10px;
+      border: 1px solid #0aa9f3;
+      font-size: 30px;
+      color: black;
+      border-radius: 30px
+    }
+
+    button {
+      margin-top: 100px;
+      padding: 12px;
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: #4a67ff;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .btn {
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 100;
+      font-size: 2rem;
+      background: #38bdf8;
+      box-shadow: 0 0 15px #38bdf8;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn a {
+      position: relative;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+
+    }
+
+    .msg {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Login Page</h1>
+    <form action="workspace.html">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Password:</label>
+      <input type="password" name="password" required>
+      <button class="btn" type="submit"><a href="workspace.html">Login</a></button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get("error") === "1") {
+      document.getElementById("msg").textContent = "";
+      document.getElementById("msg").style.color = "red";
+    }
+    if (params.get("registered") === "1") {
+      document.getElementById("msg").textContent = "";
+      document.getElementById("msg").style.color = "green";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .container {
+            width: 4553px;
+            height: 300px;
+            background-color: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .first,
+        .second,
+        .third {
+            min-width: 1320px;
+            height: 280px;
+            border: 2px solid black;
+            margin: 10px;
+            display: flex;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            margin: 5px;
+            margin-left: 10px;
+            width: 400px;
+            height: 260px;
+            border: 2px solid black;
+        }
+
+        .first {
+            background-color: red;
+        }
+
+        .second {
+            background-color: lime;
+        }
+
+        .third {
+            background-color: yellow;
+        }
+        button{
+            padding: 10px;
+            background-color: black;
+        }
+        button a{
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+        .sliding{
+            width: 500px;
+            height: 400px;
+            border: 2px solid red;
+            animation: slide 6s ease-out infinite alternate;
+        }
+        @keyframes slide{
+        0%{
+            background-image: url(fullsize/call\ of\ duty\ full.jpg);background-size: cover;
+        }
+        50%{
+            background-image: url(fullsize/fortnitefull.jpg);
+        }
+        100%{
+            background-image: url(fullsize/Gta\ vfull.jpg);
+        }
+        }
+        img{
+            width: 400px;
+            height: 260px;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <div class="sliding">
+        
+    </div>
+        <div class="container">
+        <div class="first" id="first">
+            <button><a href="#third">&#11164;</a></button>
+            <div class="box1"><img src="fullsize/fortnitefull.jpg" alt=""></div>
+            <div class="box2">1box2</div>
+            <div class="box3">1box3</div>
+            <button><a href="#second">&#11166;</a></button>
+        </div>
+        <div class="second" id="second">
+            <button><a href="#first">&#11164;</a></button>
+            <div class="box1">2box1</div>
+            <div class="box2">2box2</div>
+            <div class="box3">2box3</div>
+            <button><a href="#third">&#11166;</a></button>
+
+        </div>
+        <div class="third" id="third">
+            <button><a href="#second">&#11164;</a></button>
+            <div class="box1">3box1</div>
+            <div class="box2">3box2</div>
+            <div class="box3">3box3</div>
+            <button><a href="#first">&#11166;</a></button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

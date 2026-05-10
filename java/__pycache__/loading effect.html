@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .skeleton-card {
+  background: #0b1020;
+  padding: 15px;
+  border-radius: 12px;
+  width: 220px;
+}
+
+.skeleton-image {
+  height: 120px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #1a1f35 25%,
+    #2a2f4f 37%,
+    #1a1f35 63%
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background: #1a1f35;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+.skeleton-button {
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 8px;
+  background: #1a1f35;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="skeleton-card">
+  <div class="skeleton-image"></div>
+  <div class="skeleton-text"></div>
+  <div class="skeleton-text short"></div>
+  <div class="skeleton-button"></div>
+</div>
+<script>
+    skeleton.style.display = "none";
+gamesContainer.style.display = "grid";
+
+</script>
+</body>
+</html>
