@@ -260,7 +260,7 @@
         top: 40px;
         text-align: center;
         animation: run 1s ease infinite alternate;
-
+ overflow: auto;
     }
 
     @keyframes run {
@@ -294,7 +294,7 @@
         border-radius: 10px;
         cursor: pointer;
         transition: scale 0s ease, background ease 0s;
-        overflow: auto;
+       
     }
 
     .noti ul li:hover a,
