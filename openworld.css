@@ -260,7 +260,7 @@
         top: 40px;
         text-align: center;
         animation: run 1s ease infinite alternate;
-
+        overflow: auto;
     }
 
     @keyframes run {

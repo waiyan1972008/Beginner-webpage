@@ -294,7 +294,7 @@
         border-radius: 10px;
         cursor: pointer;
         transition: scale 0s ease, background ease 0s;
-
+        overflow: auto;
     }
 
     .noti ul li:hover a,
