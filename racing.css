@@ -592,8 +592,7 @@
 
     .items-head img {
         float: left;
-        width: 50px;
-        height: 50px;
+        width: 50px; 
         margin: 10px;
         border-radius: 5px;
         box-shadow: 0 0 15px #003289;
