@@ -157,7 +157,7 @@
             <div class="icon2">
                 <div class="fav">
                     <h3>Favourite</h3>
-                    <ul>
+                    <ul id="favList">
                         <li><a
                                 href="https://www.minecraft.net/en-us/store/minecraft-deluxe-collection-pc?tabs=%7B%22details%22%3A0%7D">💖Minecraft</a>
                         </li>
@@ -240,8 +240,10 @@
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2178380/efb81a4d472afc2251121c0d4c940d1dec4d70dc/header.jpg?t=1773821481"
                             alt="SCP"><button><a
                                 href="https://store.steampowered.com/app/2178380/SCP__Containment_Breach/">Get</a></button>
+                        <button onclick="addToFav('Call of duty ')">💖</button>
+
                         <h3>SCP Containment Breach</h3>
-                        <p>4.4⭐| Survival Horror |  </p>
+                        <p>4.4⭐| Survival Horror | </p>
                     </div>
 
                     <div class="items-body">
@@ -252,8 +254,11 @@
                 <div class="items">
                     <div class="items-head">
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/356670/header.jpg?t=1572974273"
-                            alt=""><button><a
+                            alt="">
+                        <button><a
                                 href="https://store.steampowered.com/dlc/356670/Spookys_Jump_Scare_Mansion/">Get</a></button>
+                        <button onclick="addToFav('Spooky’s Jump Scare Mansion')">💖</button>
+
                         <h3>Spooky’s Jump Scare Mansion</h3>
                         <p>4.5⭐| Exploration Horror | </p>
                     </div>
@@ -268,6 +273,8 @@
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/698780/header.jpg?t=1681943582"
                             alt=" "><button><a
                                 href="https://store.steampowered.com/app/698780/Doki_Doki_Literature_Club/">Get</a></button>
+                        <button onclick="addToFav('Doki Doki Literature Club')">💖</button>
+
                         <h3>Doki Doki Literature Club </h3>
                         <p>4.3⭐| Visual Novel | Psychological Horror | </p>
                     </div>
@@ -282,6 +289,8 @@
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252330/header.jpg?t=1726514166"
                             alt=""><button><a
                                 href="https://store.steampowered.com/app/252330/Slender_The_Arrival/">Get</a></button>
+                        <button onclick="addToFav(' Slender: The Eight Pages  ')">💖</button>
+
                         <h3>Slender: The Eight Pages </h3>
                         <p>4.2⭐| Survival| Slender Horror|</p>
                     </div>
@@ -296,6 +305,8 @@
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1484800/header.jpg?t=1721234747"
                             alt="Zardy’s Maze">
                         <button><a href="https://store.steampowered.com/app/1484800/Zardys_Maze/">Get</a></button>
+                        <button onclick="addToFav(' Zardy’s Maze ')">💖</button>
+
                         <h3>Zardy’s Maze</h3>
                         <p>3.8⭐| Survival | Maze Horror|</p>
                     </div>
@@ -307,46 +318,65 @@
                 </div>
                 <div class="items">
                     <div class="items-head">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625430/header.jpg?t=1727200708" alt="Northbury Grove"><button><a href="https://store.steampowered.com/app/2625430/Return_to_Northbury_Grove/">Get</a></button>
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625430/header.jpg?t=1727200708"
+                            alt="Northbury Grove"><button><a
+                                href="https://store.steampowered.com/app/2625430/Return_to_Northbury_Grove/">Get</a></button>
+                        <button onclick="addToFav('Northbury Grove ')">💖</button>
+
                         <h3>Northbury Grove</h3>
                         <p>3.7⭐| Survival | Slasher Horror | </p>
                     </div>
 
                     <div class="items-body">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625430/ss_a4b5404df6d3a0c7c2d8ae8d0dfe172ab79396b8.1920x1080.jpg?t=1727200708" alt="Northbury Grove">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2625430/ss_a4b5404df6d3a0c7c2d8ae8d0dfe172ab79396b8.1920x1080.jpg?t=1727200708"
+                            alt="Northbury Grove">
                     </div>
                 </div>
                 <div class="items">
                     <div class="items-head">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2330750/header.jpg?t=1682737875" alt="Cataclysm: Dark Days Ahead"><button><a href="https://store.steampowered.com/app/2330750/Cataclysm_Dark_Days_Ahead/">Get</a></button>
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2330750/header.jpg?t=1682737875"
+                            alt="Cataclysm: Dark Days Ahead"><button><a
+                                href="https://store.steampowered.com/app/2330750/Cataclysm_Dark_Days_Ahead/">Get</a></button>
+                        <button onclick="addToFav(' Cataclysm: Dark Days Ahead ')">💖</button>
+
                         <h3>Cataclysm: Dark Days Ahead</h3>
-                        <p>4.3     ⭐| Roguelike | Survival Horror | </p>
+                        <p>4.3 ⭐| Roguelike | Survival Horror | </p>
                     </div>
 
                     <div class="items-body">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2330750/ss_2c559f57342f33322055fd259fb3197624c23bd8.1920x1080.jpg?t=1682737875" alt="Cataclysm: Dark Days Ahead">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2330750/ss_2c559f57342f33322055fd259fb3197624c23bd8.1920x1080.jpg?t=1682737875"
+                            alt="Cataclysm: Dark Days Ahead">
                     </div>
                 </div>
                 <div class="items">
                     <div class="items-head">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/7e5d923ac622bd1775ebc9b5d4b5b0a24bf5ed40/header.jpg?t=1770169624" alt="SILENT HILL f"><button><a href="https://store.steampowered.com/app/2947440/SILENT_HILL_f/">Get</a></button>
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/7e5d923ac622bd1775ebc9b5d4b5b0a24bf5ed40/header.jpg?t=1770169624"
+                            alt="SILENT HILL f"><button><a
+                                href="https://store.steampowered.com/app/2947440/SILENT_HILL_f/">Get</a></button>
+                        <button onclick="addToFav('SILENT HILL f')">💖</button>
+
                         <h3>SILENT HILL f</h3>
                         <p>4.5⭐|Survival | Psychological | </p>
                     </div>
 
                     <div class="items-body">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/0052fc9d54c4b4f1588b798a6638556c6b5d4db2/ss_0052fc9d54c4b4f1588b798a6638556c6b5d4db2.1920x1080.jpg?t=1770169624" alt="SILENT HILL f">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/0052fc9d54c4b4f1588b798a6638556c6b5d4db2/ss_0052fc9d54c4b4f1588b798a6638556c6b5d4db2.1920x1080.jpg?t=1770169624"
+                            alt="SILENT HILL f">
                     </div>
                 </div>
                 <div class="items">
                     <div class="items-head">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4100940/1172d8d66d4e09fb1cc378f4712c7c25d1fe17b2/header.jpg?t=1771434005" alt="Poppy Playtime - Chapter 5"><button><a href="">Get</a></button>
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4100940/1172d8d66d4e09fb1cc378f4712c7c25d1fe17b2/header.jpg?t=1771434005"
+                            alt="Poppy Playtime - Chapter 5"><button><a href="">Get</a></button>
+                        <button onclick="addToFav('Poppy Playtime - Chapter 5 ')">💖</button>
+
                         <h3>Poppy Playtime - Chapter 5</h3>
                         <p>4.5⭐| Puzzle | Survival | </p>
                     </div>
 
                     <div class="items-body">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4100940/e49275f941ae7c5c49020cc13f9ec5f162eeb2f2/ss_e49275f941ae7c5c49020cc13f9ec5f162eeb2f2.1920x1080.jpg?t=1771434005" alt="Poppy Playtime - Chapter 5">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4100940/e49275f941ae7c5c49020cc13f9ec5f162eeb2f2/ss_e49275f941ae7c5c49020cc13f9ec5f162eeb2f2.1920x1080.jpg?t=1771434005"
+                            alt="Poppy Playtime - Chapter 5">
                     </div>
                 </div>
 
@@ -393,6 +423,43 @@
             mainList.style.display = "block";
         }, 500);
     </script>
+    <script>
+        let fav = [];
+        const favList = document.getElementById("favList");
+
+        function addToFav(name) {
+
+            const existing = favList.querySelector(`[data-name="${name}"]`);
+
+            // ✅ REMOVE
+            if (existing) {
+                existing.remove();
+                fav = fav.filter(item => item !== name);
+                return;
+            }
+
+            // ✅ ADD
+            fav.push(name);
+
+            let li = document.createElement("li");
+            li.setAttribute("data-name", name);
+
+            li.innerHTML = `
+            <a href="#">💖 ${name}</a>
+            <button onclick="removeFav('${name}')">❌</button>
+        `;
+
+            favList.appendChild(li);
+        }
+
+        function removeFav(name) {
+            const item = favList.querySelector(`[data-name="${name}"]`);
+            if (item) item.remove();
+
+            fav = fav.filter(f => f !== name);
+        }
+    </script>
+
 
 
 </body>
